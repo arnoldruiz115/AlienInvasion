@@ -171,6 +171,8 @@ def check_aliens_bottom(ai_settings, stats, sb, screen, ship, aliens, bullets):
     for alien in aliens.sprites():
         if alien.rect.bottom >= screen_rect.bottom:
             ship_hit(ai_settings, stats, sb, screen, ship, aliens, bullets)
+            # return because if multiple aliens touch the bottom, multiple lives are lost
+            return
 
 
 def check_high_score(stats, sb):
